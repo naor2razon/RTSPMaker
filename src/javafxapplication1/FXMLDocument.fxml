@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="javafxapplication1.FXMLDocumentController">
+   <children>
+      <TabPane layoutY="-2.0" prefHeight="400.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab style="-fx-background-color: #eda678;" text="Add Component">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="698.0" style="-fx-background-color: #3D4956#3D4956;">
+                     <children>
+                        <Label layoutX="29.0" layoutY="37.0" text="Component Name:" textFill="WHITE" />
+                        <TextField fx:id="componentName" layoutX="156.0" layoutY="34.0" />
+                        <Separator layoutX="29.0" layoutY="247.0" prefHeight="0.0" prefWidth="736.0" />
+                        <Label layoutX="29.0" layoutY="259.0" text="Username: {USERNAME}" textFill="WHITE" />
+                        <Label layoutX="29.0" layoutY="290.0" text="Password: {PASSWORD}" textFill="WHITE" />
+                        <Label layoutX="231.0" layoutY="259.0" text="Port: {PORT}" textFill="WHITE" />
+                        <Label layoutX="231.0" layoutY="290.0" text="IP/Domain: {IP}" textFill="WHITE" />
+                        <Label layoutX="32.0" layoutY="81.0" text="URL Format:" textFill="WHITE" />
+                        <TextField fx:id="URLComponentFormat" focusTraversable="false" layoutX="156.0" layoutY="73.0" prefHeight="26.0" prefWidth="610.0" />
+                        <Button fx:id="usernameButton" layoutX="29.0" layoutY="138.0" mnemonicParsing="false" style="-fx-background-color: #eda678; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="{USERNAME}" />
+                        <Button fx:id="passwordButton" layoutX="141.0" layoutY="138.0" mnemonicParsing="false" style="-fx-background-color: #eda678; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="{PASSWORD}" />
+                        <Button fx:id="portButton" layoutX="305.0" layoutY="137.0" mnemonicParsing="false" style="-fx-background-color: #eda678; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="{PORT}" />
+                        <Button fx:id="ipButton" layoutX="256.0" layoutY="138.0" mnemonicParsing="false" style="-fx-background-color: #eda678; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="{IP}" />
+                        <Button fx:id="saveComponentButton" layoutX="732.0" layoutY="205.0" mnemonicParsing="false" onAction="#addComponentSaveButtonPushed" style="-fx-background-color: #eda678; -fx-border-radius: 5em; -fx-background-radius: 5em;" text="Save" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab style="-fx-background-color: #eda678;" text="Add RTSP">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="340.0" prefWidth="666.0" style="-fx-background-color: #3D4956#3D4956;">
+                     <children>
+                        <CheckBox fx:id="PrimaryChannel" layoutX="14.0" layoutY="155.0" mnemonicParsing="false" selected="true" text="Primery Channel" textFill="WHITE" />
+                        <TextField fx:id="streamingUserName" layoutX="195.0" layoutY="73.0" text="admin" />
+                        <Label layoutX="16.0" layoutY="76.0" prefHeight="20.0" prefWidth="159.0" text="Camera/DVR User Name:" textFill="WHITE" />
+                        <Label layoutX="14.0" layoutY="119.0" prefHeight="18.0" prefWidth="150.0" text="Camera/DVR Password:" textFill="WHITE" />
+                        <TextField fx:id="streamingPassword" layoutX="195.0" layoutY="115.0" />
+                        <Label layoutX="373.0" layoutY="78.0" prefHeight="17.0" prefWidth="106.0" text="Camera/DVR IP:" textFill="WHITE" />
+                        <TextField fx:id="streamingIp" layoutX="498.0" layoutY="73.0" />
+                        <TextField fx:id="streamingPort" layoutX="498.0" layoutY="115.0" text="554" />
+                        <Label layoutX="373.0" layoutY="119.0" text="Camera/DVR Port:" textFill="WHITE" />
+                        <TextField fx:id="RTSPStringLable" editable="false" layoutX="48.0" layoutY="276.0" prefHeight="26.0" prefWidth="571.0" />
+                        <CheckBox fx:id="DnsName" layoutX="195.0" layoutY="157.0" mnemonicParsing="false" text="DNS Name" textFill="WHITE" />
+                        <Button layoutX="24.0" layoutY="210.0" mnemonicParsing="false" style="-fx-background-color: #eda678; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Reset" />
+                        <Button fx:id="createRtspButton" layoutX="696.0" layoutY="212.0" mnemonicParsing="false" onAction="#createRTSPUrlWhileButtonPushed" style="-fx-background-color: #eda678; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Create" />
+                        <ComboBox fx:id="optionsComboBox" layoutX="21.0" layoutY="33.0" onAction="#optionsComboBoxButtonPushed" prefWidth="150.0" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+            <Tab style="-fx-background-color: #eda678;" text="Convert Table">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #3D4956#3D4956 #3D4956#3D4956;">
+                     <children>
+                        <Button fx:id="_selectFileButton_selectFileButton" layoutX="195.0" layoutY="86.0" mnemonicParsing="false" onAction="#selectFilePressed" style="-fx-background-color: #eda678; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Select File" />
+                        <Button layoutX="203.0" layoutY="194.0" mnemonicParsing="false" style="-fx-background-color: #eda678; -fx-background-radius: 5em; -fx-border-radius: 5em;" text="Button" />
+                        <ListView layoutX="386.0" layoutY="53.0" prefHeight="200.0" prefWidth="306.0" />
+                     </children></AnchorPane>
+              </content>
+            </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>
